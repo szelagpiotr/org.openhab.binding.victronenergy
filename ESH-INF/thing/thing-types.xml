@@ -31,8 +31,8 @@
                 <label>Hasło</label>
                 <description>Wprowadz nazwę uzytkownika</description>
             </parameter>
-            <!-- <parameter name="token" type="text"></parameter> czy będzie potrzebny? -->
             
+            <!-- <parameter name="token" type="text"></parameter> czy będzie potrzebny? -->
             <parameter name="iduser" type="integer">
                 <label>Numer użytkownika w portalu vrm</label>
                 <default>14469</default>
@@ -42,6 +42,12 @@
                 <description>unikalny numer przypisany instalacji PV podłączonej do systemu Victron Energy</description>
                 <default>10854</default>
             </parameter>
+            <parameter name="refresh" type="integer" required="true" min="10" max="240">
+                <label>Czas odświeżania</label>
+                <description>Minuty</description>
+                <default>60</default>
+            </parameter>
+            
 		</config-description>
 
 	</thing-type>
