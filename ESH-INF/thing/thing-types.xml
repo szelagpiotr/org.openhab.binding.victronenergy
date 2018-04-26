@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="victronenergy"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+	<!-- Sample Thing Type -->
+	<thing-type id="victronenergy">
+		<label>VictronEnergy Binding Thing</label>
+		<description>Podstawowe parametry z inwertera Victron Energy</description>
+
+		<channels>
+			<channel id="channel1" typeId="sample-channel" />
+            <channel typeId="victronenergy-pvtogrid" id="pvtogrid"></channel> <!-- PV to grid -->
+            <channel typeId="victronenergy-pvtoconsumer" id="pvtoconsumer"></channel> <!-- PV to consumer -->
+            <channel typeId="victronenergy-pvtobattery" id="pvtobattery"></channel> <!-- PV to baterry -->
+            <channel typeId="victronenergy-gridtoconsumer" id="gridtoconsumer"></channel> <!-- Grid to consumer -->
+            <channel typeId="victronenergy-gridtobattery" id="gridtobattery"></channel> <!-- Grid to battery -->
+            <channel typeId="victronenergy-batterytoconsumer" id="batterytoconsumer"></channel> <!-- Battery to consumer -->
+            <channel typeId="victronenergy-batterytogrid" id="batterytogrid"></channel> <!-- Battery to grid -->       
+            <channel typeId="victronenergy-suminkwh" id="suminkwh"></channel> <!-- Sum of Pg, Pc, Pb, Gc, Gb, Bc, Bg -->  			
+		</channels>
+
+		<config-description>
+			<parameter name="username" type="text">
+                <label>Nazwa użytkownika</label>
+                <description>adres email do logowania</description>
+                <default>szelag@el.pcz.czest.pl</default>
+            </parameter>
+            <parameter name="password" type="text">
+                <label>Hasło</label>
+                <description>Wprowadz nazwę uzytkownika</description>
+            </parameter>
+            <!-- <parameter name="token" type="text"></parameter> czy będzie potrzebny? -->
+            
+            <parameter name="iduser" type="integer">
+                <label>Numer użytkownika w portalu vrm</label>
+                <default>14469</default>
+            </parameter>
+            <parameter name="idsite" type="integer">
+                <label>Numer instalacji</label>
+                <description>unikalny numer przypisany instalacji PV podłączonej do systemu Victron Energy</description>
+                <default>10854</default>
+            </parameter>
+		</config-description>
+
+	</thing-type>
+
+	<!-- Sample Channel Type -->
+	<channel-type id="sample-channel">
+		<item-type>victronenergyItem</item-type>
+		<label>VictronEnergy Binding Channel</label>
+		<description>Sample channel for VictronEnergy Binding</description>
+	</channel-type>
+
+    <channel-type id="victronenergy-pvtogrid">
+        <item-type>Number</item-type>
+        <label>PV to grid</label>
+        <description>Energia z paneli PV skierowana do sieci elektrycznej (na zewnątrz)</description>
+        <state readOnly="true" pattern="%.4f kwh"> </state>
+    </channel-type>
+    
+    <channel-type id="victronenergy-pvtoconsumer">
+        <item-type>Number</item-type>
+        <label>PV to consumer</label>
+        <description>Energia z paneli PV skierowana do sieci elektrycznej (na bieżące potrzeby)</description>
+        <state readOnly="true" pattern="%.4f kwh"> </state>
+    </channel-type>
+    
+    <channel-type id="victronenergy-pvtobattery">
+        <item-type>Number</item-type>
+        <label>PV to battery</label>
+        <description>Energia z paneli PV skierowana do magazynu energii</description>
+        <state readOnly="true" pattern="%.4f kwh"> </state>
+    </channel-type>
+     <channel-type id="victronenergy-gridtoconsumer">
+        <item-type>Number</item-type>
+        <label>Grid to consumer</label>
+        <description>Energia z sieci elektrycznej (z zewnątrz) wykorzystana na użytek własny</description>
+        <state readOnly="true" pattern="%.4f kwh"> </state>
+    </channel-type>
+    <channel-type id="victronenergy-gridtobattery">
+        <item-type>Number</item-type>
+        <label>Grid to battery</label>
+        <description>Energia z sieci elektrycznej (z zewnątrz) skierowana do magazynu energii</description>
+        <state readOnly="true" pattern="%.4f kwh" ></state>
+    </channel-type>
+    <channel-type id="victronenergy-batterytoconsumer">
+        <item-type>Number</item-type>
+        <label>Battery to consumer</label>
+        <description>Energia z magazynu wykorzystana na potrzeby własne</description>
+        <state readOnly="true" pattern="%.4f kwh" ></state>
+    </channel-type>
+    <channel-type id="victronenergy-batterytogrid">
+        <item-type>Number</item-type>
+        <label>Battery to grid</label>
+        <description>Energia z magazynu przesłana zo zewnętrznej sieci elektrycznej</description>
+        <state readOnly="true" pattern="%.4f kwh"> </state>
+    </channel-type>
+    <channel-type id="victronenergy-suminkwh">
+        <item-type>Number</item-type>
+        <label>Sum of Pg, Pc, Pb, Gc, Gb, Bc, Bg </label>
+        <description>Suma wszystkich przepływów energii z kategorii "totals"</description>
+        <state readOnly="true" pattern="%.4f kwh"> </state>
+    </channel-type>
+    
+
+</thing:thing-descriptions>
