@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <thing:thing-descriptions bindingId="victronenergy"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
@@ -63,51 +63,51 @@
         <item-type>Number</item-type>
         <label>PV to grid</label>
         <description>Energia z paneli PV skierowana do sieci elektrycznej (na zewnątrz)</description>
-        <state readOnly="true" pattern="%.4f kwh"> </state>
+        <state readOnly="true" pattern="%.2f kwh"> </state>
     </channel-type>
     
     <channel-type id="victronenergy-pvtoconsumer">
         <item-type>Number</item-type>
         <label>PV to consumer</label>
         <description>Energia z paneli PV skierowana do sieci elektrycznej (na bieżące potrzeby)</description>
-        <state readOnly="true" pattern="%.4f kwh"> </state>
+        <state readOnly="true" pattern="%.2f kwh"> </state>
     </channel-type>
     
     <channel-type id="victronenergy-pvtobattery">
         <item-type>Number</item-type>
         <label>PV to battery</label>
         <description>Energia z paneli PV skierowana do magazynu energii</description>
-        <state readOnly="true" pattern="%.4f kwh"> </state>
+        <state readOnly="true" pattern="%.2f kwh"> </state>
     </channel-type>
      <channel-type id="victronenergy-gridtoconsumer">
         <item-type>Number</item-type>
         <label>Grid to consumer</label>
         <description>Energia z sieci elektrycznej (z zewnątrz) wykorzystana na użytek własny</description>
-        <state readOnly="true" pattern="%.4f kwh"> </state>
+        <state readOnly="true" pattern="%.2f kwh"> </state>
     </channel-type>
     <channel-type id="victronenergy-gridtobattery">
         <item-type>Number</item-type>
         <label>Grid to battery</label>
         <description>Energia z sieci elektrycznej (z zewnątrz) skierowana do magazynu energii</description>
-        <state readOnly="true" pattern="%.4f kwh" ></state>
+        <state readOnly="true" pattern="%.2f kwh" ></state>
     </channel-type>
     <channel-type id="victronenergy-batterytoconsumer">
         <item-type>Number</item-type>
         <label>Battery to consumer</label>
         <description>Energia z magazynu wykorzystana na potrzeby własne</description>
-        <state readOnly="true" pattern="%.4f kwh" ></state>
+        <state readOnly="true" pattern="%.2f kwh" ></state>
     </channel-type>
     <channel-type id="victronenergy-batterytogrid">
         <item-type>Number</item-type>
         <label>Battery to grid</label>
         <description>Energia z magazynu przesłana zo zewnętrznej sieci elektrycznej</description>
-        <state readOnly="true" pattern="%.4f kwh"> </state>
+        <state readOnly="true" pattern="%.2f kwh"> </state>
     </channel-type>
     <channel-type id="victronenergy-suminkwh">
         <item-type>Number</item-type>
         <label>Sum of Pg, Pc, Pb, Gc, Gb, Bc, Bg </label>
         <description>Suma wszystkich przepływów energii z kategorii "totals"</description>
-        <state readOnly="true" pattern="%.4f kwh"> </state>
+        <state readOnly="true" pattern="%.2f kwh"> </state>
     </channel-type>
     
 
